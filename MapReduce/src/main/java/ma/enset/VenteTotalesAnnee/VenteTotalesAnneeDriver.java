@@ -23,15 +23,14 @@ public class VenteTotalesAnneeDriver {
         //les types de sortie de la fonction map
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(DoubleWritable.class);
-        //les types de sotie du job
+        //les types de sortie du job
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(DoubleWritable.class);
-        //le fomat input
+        //la format input
         job.setInputFormatClass(TextInputFormat.class);
         //le path des fichiers input/output
         FileInputFormat.addInputPath(job,new Path(args[0]));
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
-
         job.waitForCompletion(true);
     }
 }

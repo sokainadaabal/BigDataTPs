@@ -11,6 +11,7 @@ import java.util.Iterator;
 public class VentesTotaleReduce extends Reducer<Text, DoubleWritable,Text,DoubleWritable> {
     @Override
     protected void reduce(Text keyVente, Iterable<DoubleWritable> totaleVentes, Context context) throws IOException, InterruptedException {
+        // calcule le total vendu dans chaque ville
         Iterator<DoubleWritable> iterator = totaleVentes.iterator();
         double totale = 0;
         while(iterator.hasNext()){
