@@ -12,7 +12,7 @@
               <th style="text-align: center;">Filière</th>
               <th style="text-align: center;">Date </th>
               <th style="text-align: center;">  E-mail  </th>
-              <th style="text-align: center;">  Doc  </th>
+              <th style="text-align: center;"> Type  </th>
             </tr>
             <tr >
               <td>Daabal Sokaina</td>
@@ -28,12 +28,12 @@
 # TP  1 : MapReduce & Yarn 
 ## 1. Introduction
 > Dans ce TP, nous avons la possibilité de voir de quelle façon un fichier .txt peut être traité. Et retourner un résultat avec MapReduce.
-## 2.	Objectif de TP1
+## 2.	Objectif de ce TP
 -	Traiter le fichier des ventes.
 -	Retourner le total des ventes dans chacune des villes.
 -	Retourner le total des ventes de chaque ville à une année déterminée.
 ## 3.	Réalisation 
-Réaliser ce TP, fait cela dans une machine virtuelle, nous avons déjà installé en elle Hadoop et configurer hdfs et yarn.
+Pour réaliser ce TP, on fait cela dans une machine virtuelle, nous avons déjà installé en elle Hadoop et configurer hdfs et yarn.
  ### 3.1. Préparation de l’environnement 
  #### 3.1.1. Formater du système de fichiers hdfs 
 Pour formater le système de fichiers, il faut exécuter la commande suivante :
@@ -41,7 +41,7 @@ Pour formater le système de fichiers, il faut exécuter la commande suivante :
     hadoop namenode -format
 ```    
 #### 3.1.2.	Démarrage de Hadoop  
-Il existe deux manières de lancer le système Hadoop, soit en exécutant cette commande :
+Il existe deux manières pour lancer le système Hadoop, soit en exécutant cette commande :
  ``` 
     stat-all.sh
  ```
@@ -49,12 +49,12 @@ Ou démarrer Hadoop avec la commande suivante :
 ```
     start-dfs.sh
 ```
-Et par la suite démarrer yarn, avec l’exécution de commande suivante :
+Et par la suite démarrer yarn, avec l’exécution de la commande suivante :
  ```
     start-yarn.sh
  ```
 #### 3.1.3.	Vérification le fonctionnement de Hadoop 
-Pour vérifier si Hadoop fonctionne bien, entrez la commande jps et vous obtiendrez le résultat suivant :
+Pour vérifier si Hadoop fonctionne bien, entrez la commande jps et vous obtiendrez les résultats suivants :
 ```
     $ jps 
     16128 Jps 
@@ -75,8 +75,8 @@ Nous entamons notre TP, par la création du fichier `ventes.txt` dans le systèm
 ```
 #### 3.2.2 Exécution d’un job MapReduce 
 ##### 3.2.2.1	Compter le nombre de vente par ville
-> Pour compter le nombre de ventes par ville, nous allons écrire un job MapReduce qui va d'abord lire le fichier `ventes.txt` et enverra un mapper qui contient la clé qui présente la ville et la valeur qui présente le prix du produit vendu. 
-Reduce comptabilisera les montants du prix du produit vendu et donnera un résultat en fichier.
+> Pour compter le nombre de ventes par ville, nous allons écrire un job MapReduce qui va d'abord lire le fichier `ventes.txt` et enverra un mapper qui contient la clé qui présente la ville et la valeur qui présente le prix du produit vendu. Reduce comptabilisera les montants du prix du produit vendu et donnera un résultat en fichier.
+
 Pour réaliser ce traitement, nous avons créé deux classes :
 - `VentesTotaleMapper.java`
 ``` java
@@ -140,6 +140,7 @@ Pour réaliser ce traitement, nous avons créé deux classes :
   }
 ```
 Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration dans IntellIJ pour générer un fichier .jar.
+
 Ensuite, nous allons exécuter cette commande : 
 ```         
 hadoop jar MapReduce-1.0-SNAPSHOT.jar ma/enset/venteTotales/VenteTotalesDriver /user/root/BigDataTPs/MapReduce/ventes.txt /user/root/BigDataTPs/MapReduce/input
@@ -152,6 +153,7 @@ jadida  1500.0
 ```
 ##### 3.2.2.2	Compter le nombre de ventes par ville pendant une année donnée
 > Calculer le prix de vente total des marchandises par ville au cours d'une année donnée. on écrira un job MapReduce qui lira en premier le fichier ventes.txt. et enverra un mapper qui contient la clé qui présente la ville concaténée par la date et la valeur qui présente le prix du produit vendu à la date indiquée. Reduce comptabilisera les montants du prix du produit vendu durant une année et donnera un résultat en fichier.
+
 Pour réaliser ce traitement, nous avons créé deux classes :
 - `VenteTotalesAnneeMapper.java`
 ``` java
@@ -216,6 +218,7 @@ public class VenteTotalesAnneeDriver {
 
 ````
 Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration dans IntellIJ pour générer un fichier .jar.
+
 Ensuite, nous allons exécuter cette commande : 
 ```         
 hadoop jar MapReduce-1.0-SNAPSHOT.jar ma/enset/VenteTotalesAnnee/VenteTotalesAnneeDriver /user/root/BigDataTPs/MapReduce/ventes.txt /user/root/BigDataTPs/MapReduce/inputTotale
