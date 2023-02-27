@@ -25,7 +25,7 @@
           </table> 
 
 
-# TP  1 : MapReduce & Yarn 
+# TP  1 : MapReduce
 ## 1. Introduction
 > Dans ce TP, nous avons la possibilité de voir de quelle façon un fichier .txt peut être traité. Et retourner un résultat avec MapReduce.
 ## 2.	Objectif de ce TP
