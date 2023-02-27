@@ -100,8 +100,8 @@ Pour réaliser ce traitement, nous avons créé deux classes :
 ``` java 
   public class VentesTotaleReduce extends Reducer<Text, DoubleWritable,Text,DoubleWritable> {
         @Override
-        protected void reduce(Text keyVente, Iterable<DoubleWritable> totaleVentes, Context context) throws IOException,
-          InterruptedException {
+        protected void reduce(Text keyVente, Iterable<DoubleWritable> totaleVentes, Context context) throws 
+        IOException, InterruptedException {
             // calcule le total vendu dans chaque ville
             Iterator<DoubleWritable> iterator = totaleVentes.iterator();
             double totale = 0;
@@ -179,7 +179,8 @@ public class VenteTotalesAnneeMapper extends Mapper<LongWritable, Text, Text , D
 ``` java
 public class VenteTotalesAnneeReduce extends Reducer<Text, DoubleWritable,Text,DoubleWritable> {
     @Override
-    protected void reduce(Text keyVente, Iterable<DoubleWritable> totaleVentes, Reducer<Text, DoubleWritable, Text, DoubleWritable>.Context context) throws IOException, InterruptedException {
+    protected void reduce(Text keyVente, Iterable<DoubleWritable> totaleVentes,Context context) throws IOException,
+    InterruptedException {
         // calcule le total vendu dans chaque ville dans une année
         Iterator<DoubleWritable> iterator = totaleVentes.iterator();
         double totale = 0;
