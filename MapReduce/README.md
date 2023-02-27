@@ -145,7 +145,7 @@ Ensuite, nous allons exécuter cette commande :
 ```         
 hadoop jar MapReduce-1.0-SNAPSHOT.jar ma/enset/venteTotales/VenteTotalesDriver /user/root/BigDataTPs/MapReduce/ventes.txt /user/root/BigDataTPs/MapReduce/input
 ```
-Pour afficher le résultat du MapReduce, on va exécuter la commande suivante suivante :
+Pour afficher le résultat du MapReduce, on va exécuter la commande suivante:
 ```
 $ hdfs dfs -cat /user/root/BigDataTPs/MapReduce/input/part-r-00000
 casa    46764.0
@@ -224,7 +224,7 @@ Ensuite, nous allons exécuter cette commande :
 ```         
 hadoop jar MapReduce-1.0-SNAPSHOT.jar ma/enset/VenteTotalesAnnee/VenteTotalesAnneeDriver /user/root/BigDataTPs/MapReduce/ventes.txt /user/root/BigDataTPs/MapReduce/inputTotale
 ```
-Pour afficher le résultat du MapReduce, on va exécuter la commande suivante suivante :
+Pour afficher le résultat du MapReduce, on va exécuter la commande suivante :
 ```
 $ hdfs dfs -cat /user/root/BigDataTPs/MapReduce/inputTotale/part-r-00000
 casa-2022    1980.0
