@@ -1,4 +1,4 @@
-package ma.enset;
+package ma.enset.Department;
 
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
