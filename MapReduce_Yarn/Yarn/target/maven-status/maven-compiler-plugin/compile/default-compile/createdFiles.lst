@@ -1,6 +1,9 @@
 ma/enset/DepartmentTotaleEmploye/DepartmentTotaleDriver.class
-ma/enset/Department/DepartmentDriver.class
 ma/enset/Department/DepartmentReduce.class
+ma/enset/Department/DepartmentMapper.class
+ma/enset/Temperature/TemperatureMapper.class
+ma/enset/Temperature/TemperatureDriver.class
+ma/enset/Department/DepartmentDriver.class
 ma/enset/DepartmentTotaleEmploye/DepartmentTotaleMapper.class
 ma/enset/DepartmentTotaleEmploye/DepartmentTotaleReduce.class
-ma/enset/Department/DepartmentMapper.class
+ma/enset/Temperature/TemperatureReduce.class
