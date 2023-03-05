@@ -11,9 +11,9 @@ public class TemperatureReduce  extends Reducer<Text, DoubleWritable,Text,Text> 
 
     @Override
     protected void reduce(Text key, Iterable<DoubleWritable> values, Context context) throws IOException, InterruptedException {
-            double maxTemp=Double.MAX_VALUE,minTemp=Double.MIN_VALUE;
+            double maxTemp=Double.MIN_VALUE,minTemp=Double.MAX_VALUE;
             Iterator<DoubleWritable> val=values.iterator();
-
+            val.next();
             if(val.hasNext()){
                 double currentTemp=  val.next().get() ;
                 if(maxTemp<currentTemp) maxTemp = currentTemp;

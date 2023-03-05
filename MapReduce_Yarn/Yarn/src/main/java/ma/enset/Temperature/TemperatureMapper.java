@@ -26,7 +26,7 @@ public class TemperatureMapper extends Mapper<LongWritable, Text,Text, DoubleWri
             // la temperature
             String  temp = dataline[13];
             // annee et la temperature
-            String anneeMonth=date.split("-")[0].concat("-"+ date.split("-")[1]);
+            String anneeMonth=date.trim().split("-")[0].concat("-"+ date.split("-")[1]);
             double  temperator = Double.valueOf(temp.replace(",","."));
             context.write(new Text(anneeMonth),new DoubleWritable(temperator));
     }
