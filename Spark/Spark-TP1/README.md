@@ -21,11 +21,14 @@
       <td> sokainadaabal@gmail.com / s.daabal@etu.enset-media.ac.ma </td>
      </tr>
 </table> 
+
 # TP 1 : Spark
 ## Introduction 
 > Dans ce TP, nous avons la possibilité de voir de quelle façon un fichier .txt peut être traité. Et retourner un résultat avec spark.
+
 ## Objectifs
-Utilisation de Spark pour réaliser des traitements sur des données, des fichiers de type txt ou cvs.
+
+  Utilisation de Spark pour réaliser des traitements sur des données, des fichiers de type txt ou cvs.
 ## Spark 
 ### Présentation
 Spark est un système de traitement rapide et parallèle. Il fournit des APIs de haut niveau en Java, Scala, Python et R, et un moteur optimisé qui supporte l'exécution des graphes. 
@@ -40,7 +43,7 @@ Pour installer spark,nous avons des Conditions préalables  tels que :
  2. Accès à un terminal ou à une ligne de commande.
  3. Un utilisateur avec des autorisations sudo ou root.
 #### Installation des packages requis pour spark :
-Avant de passer a l'installation de spark, vous devez installer les dépendances nécessaires. Cette étape inclut l'installation des packages suivants : 
+Avant de passer a l'installation de spark, vous devez installer les dépendances nécessaires. Cette étape inclut l'installation des packages suivants: 
 
 ```
  - JDK
@@ -48,7 +51,7 @@ Avant de passer a l'installation de spark, vous devez installer les dépendances
  - Gite
 ```
 
-Ouvrez une fenêtre de terminal et exécutez la commande suivante pour installer les trois packages en même temps :
+Ouvrez une fenêtre de terminal et exécutez la commande suivante pour installer les trois packages en même temps:
 
 ```
     sudo apt install default-jdk scala git -y
