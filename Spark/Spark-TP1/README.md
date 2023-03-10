@@ -2,7 +2,7 @@
   <tr >
     <th style="text-align: center;">Ecole Normale Supérieure de l’Enseignement  Technique Mohammedia Université Hassan II de Casablanca</th>
     <th><img src="https://www.clubs-etudiants.ma/wp-content/uploads/2018/11/enst-1.png"/></th>
-    <th style="text-align: center;"> Département Mathématiques et Informatique « Ingénierie Informatique : Big Data t Cloud Computing » II-BDCC2   </th>
+    <th style="text-align: center;"> Département Mathématiques et Informatique « Ingénierie Informatique : Big Data e t Cloud Computing » II-BDCC2   </th>
   </tr>
 </table>
 <table >
@@ -64,4 +64,19 @@ java -version; javac -version; scala -version; git --version
 
 ### Télécharger et configurer Spark sur Ubuntu
 
+Utilisez la wget commande et le lien direct pour télécharger l'archive Spark :
+```
+wget https://downloads.apache.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz
+```
+Extrayez l'archive enregistrée en utilisant tar :
+```
+tar xvf spark-*
+```
 
+Déplacez le répertoire décompressé spark-3.0.1-bin-hadoop2.7 vers le répertoire opt/spark .
+
+Utilisez la mvcommande pour le faire :
+
+```
+sudo mv spark-3.0.1-bin-hadoop2.7 /opt/spark
+```
