@@ -1,5 +1,6 @@
 package ma.enset.Exercice1;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.spark.SparkConf;
 
 import org.apache.spark.api.java.JavaPairRDD;
@@ -7,27 +8,25 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import java.util.List;
 
 public class Exercice1 {
-    public static void main(String[] args) {
+    private static final String NAMES_FILE = "names.csv";
+    public static void main(String[] args)  throws IOException {
         SparkConf conf=new SparkConf();
 
         conf.setAppName("Exercuce 1").setMaster("local[*]"); // one process for  each process
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         // creer une list des noms des etudiants c'est une list de string
-        List<String> nameList= new ArrayList<>();
-        nameList.add("sokaina");
-        nameList.add("Samira");
-        nameList.add("saad");
-        nameList.add("rachida");
-        nameList.add("Asmae");
-        nameList.add("Badia");
-        nameList.add("Badre");
+        List<String> nameList= FileUtils.readLines(new File(NAMES_FILE), Charset.defaultCharset());
+
         //RDD
 
         // prallize
