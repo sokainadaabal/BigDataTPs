@@ -75,8 +75,15 @@ tar xvf spark-*
 
 Déplacez le répertoire décompressé spark-3.0.1-bin-hadoop2.7 vers le répertoire opt/spark .
 
-Utilisez la mvcommande pour le faire :
+Utilisez la mv commande pour le faire :
 
 ```
 sudo mv spark-3.0.1-bin-hadoop2.7 /opt/spark
 ```
+
+
+
+## Application de Spark
+### Appliucation 1
+#### C'est quoi RDD
+Le RDD est une collection d’éléments partitionnées et distribuées dans le cluster.
