@@ -12,16 +12,4 @@ date ,ville,produit,prix
 2020/12/01,Kenitra,Bic,129840.834
 2020/12/01,Essaouira,HP,124884.69899999998
 2020/12/01,Sidi Slimane,HP,199364.18500000003
-2020/02/03,Ad Dakhla,Hipnotiq Liquo,11764.875
-2021/12/10,Ben Gueri,Apple - Delicious_ Red,2107.099
-2019/07/10,Essaouira,Lettuce - Radicchio,14815.455
-2019/10/03,Essaouira,Muffin Hinge 117n,19308.777
-2020/09/27,Ad Dakhla,Cheese - Mozzarella,5085.497
-2022/03/13,Temara,Beans - Green,18978.247
-2021/07/30,Temara,Onions - Vidalia,8680.141
-2020/01/24,Tineghir,Tart Shells - Sweet_ 2,1410.18
-2021/09/03,Oujda,Container - Foam Dixie 12 Oz,19297.327
-2019/11/26,Agadir,Nori Sea Weed,12484.74
-2020/05/25,Boujad,Blue Curacao - Marie Brizard,19821.287
-2021/03/06,Ad Dakhla,Lobster - Tail 6 Oz,15528.193
-2021/10/21,Al Fqih Ben,Beef Dry Aged Tenderloin Aa,4940.274
+
