@@ -23,7 +23,7 @@ public class SalesProducts {
             return new Tuple2<>(ville,prix);
         });
 
-        JavaPairDStream<String,Double>  javaPairDStream1=javaPairDStream.reduceByKey((a,b)->a+b);
+        JavaPairDStream<String,Double>  javaPairDStream1=javaPairDStream.reduceByKey((a,b)-> a+b );
         javaPairDStream1.print();
         javaStreamingContext.start();
         javaStreamingContext.awaitTermination();
