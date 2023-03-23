@@ -81,8 +81,34 @@ Utilisez la mv commande pour le faire :
 sudo mv spark-3.0.1-bin-hadoop2.7 /opt/spark
 ```
 
+### Configurer l'environnement Spark
 
+Utilisez la echo commande pour ajouter ces trois lignes à .profile :
 
+```
+echo "export SPARK_HOME=/opt/spark" >> ~/.profile
+echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
+echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
+```
+Chargez le fichier .profile dans la ligne de commande en tapant :
+
+```
+source ~/.profile
+```
+
+### Démarrer le serveur maître Spark autonome
+
+Dans le terminal, tapez :
+
+```
+start-master.sh
+```
+Pour afficher l'interface utilisateur Spark Web, ouvrez un navigateur Web et entrez l' adresse IP localhost sur le port 8080.
+
+```
+http://127.0.0.1:8080/
+```
+ 
 ## Application de Spark
 ### Appliucation 1
 #### C'est quoi RDD
