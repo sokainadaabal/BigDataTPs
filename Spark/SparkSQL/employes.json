@@ -1,0 +1,7 @@
+[
+  {"id": 1,"name": "fatima","age": 27,"salary": 20000,"departement": "info"},
+  {"id": 2,"name": "Hasnae","age": 25,"salary": 70000,"departement": "dev"},
+  {"id": 3,"name": "oumaima","age": 19,"salary": 60000,"departement": "réseau"},
+  {"id": 4,"name": "houda","age": 21,"salary": 50000,"departement": "ML"},
+  {"id": 5,"name": "saad","age": 28,"salary": 10000,"departement": "dev"}
+]
