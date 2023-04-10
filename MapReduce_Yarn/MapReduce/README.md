@@ -1,7 +1,7 @@
 <table>
   <tr >
     <th style="text-align: center;">Ecole Normale Supérieure de l’Enseignement  Technique Mohammedia Université Hassan II de Casablanca</th>
-    <th><img src="https://www.clubs-etudiants.ma/wp-content/uploads/2018/11/enst-1.png"/></th>
+    <th><img src="https://user-images.githubusercontent.com/48890714/230882470-f070fc71-e968-4785-855d-ebe3d44fe672.png"/></th>
     <th style="text-align: center;"> Département Mathématiques et Informatique « Ingénierie Informatique : Big Data t Cloud Computing » II-BDCC2   </th>
   </tr>
 </table>
