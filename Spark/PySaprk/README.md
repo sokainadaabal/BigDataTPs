@@ -4,6 +4,25 @@
 ## C'est quoi PySpark 
 
 ## Implémentation
+#### le contenu de fichier "ventes.csv" sur le quel on va faire le test
+```
+date,ville,produit,prix
+2020/12/01,Casablanca,HP,85400.31199999999
+2023/12/01,Guercif Oulad,HP,94200.35299999999
+2022/12/01,Qasbat Tadla,LENOVO,118166.463
+2020/12/01,El Kelaa des Srarhna,HP,181711.51599999997
+2020/12/01,El Kelaa des Srarhna,HP,181711.51599999997
+2019/12/01,Larach,Mac,94059.21200000001
+2020/12/01,Guelmim,LENOVO,75337.70999999999
+2020/12/01,Inezgane,HEWAWI,66242.342
+2019/12/01,Kouribga,HP,53104.721000000005
+2020/12/01,Marrakech,Dell,109202.587
+2020/12/01,Kenitra,Bic,129840.834
+2020/12/01,Essaouira,HP,124884.69899999998
+2020/12/01,Sidi Slimane,HP,199364.18500000003
+2020/12/01,Sidi Slimane,HP,199364.1500000006
+2020/12/01,Kenitra,Bic,12987840.834
+```
 ### RDD
 > Importez les bibliothèques PySpark nécessaires
 ```python
@@ -46,25 +65,7 @@ sc.stop()
 ```
 > Ces étapes vous permettront de calculer les totaux des ventes dans une ville qui existe dans un fichier CSV avec un en-tête à l'aide de PySpark RDD.
 
-#### le contenu de fichier "ventes.csv"
-```
-date,ville,produit,prix
-2020/12/01,Casablanca,HP,85400.31199999999
-2023/12/01,Guercif Oulad,HP,94200.35299999999
-2022/12/01,Qasbat Tadla,LENOVO,118166.463
-2020/12/01,El Kelaa des Srarhna,HP,181711.51599999997
-2020/12/01,El Kelaa des Srarhna,HP,181711.51599999997
-2019/12/01,Larach,Mac,94059.21200000001
-2020/12/01,Guelmim,LENOVO,75337.70999999999
-2020/12/01,Inezgane,HEWAWI,66242.342
-2019/12/01,Kouribga,HP,53104.721000000005
-2020/12/01,Marrakech,Dell,109202.587
-2020/12/01,Kenitra,Bic,129840.834
-2020/12/01,Essaouira,HP,124884.69899999998
-2020/12/01,Sidi Slimane,HP,199364.18500000003
-2020/12/01,Sidi Slimane,HP,199364.1500000006
-2020/12/01,Kenitra,Bic,12987840.834
-```
+
 #### test
 ```
 Le contenu de fichier 'ventes.cvs' 
@@ -116,6 +117,41 @@ date,ville,produit,prix
 ('Sidi Slimane', 398728.33500000066)
 ```
 ### DF
+> Importez les bibliothèques PySpark nécessaires
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import sum
+```
+> Créez une session Spark
+```python
+spark = SparkSession.builder.appName("TP Pyspark Vente").master("local[*]").getOrCreate()
+```
+> Chargez le fichier CSV dans un DataFrame Spark
+```python
+dfLines = spark.read.format("csv").option('delimiter', ',').option("schema", "customerSchema").option("inferSchema", "true").option("header", "true").load("ventes.csv")
+dfLines.printSchema()
+print("\t \t Le contenu de fichier 'ventes.cvs' \n ")
+dfLines.show()  # afficher le contenu de fichier sous forme de tableau
+```
+> Utilisez la fonction groupBy() pour regrouper les données par ville et la fonction sum() pour calculer la somme des ventes par ville 
+> Cette commande crée un nouveau DataFrame qui contient les totaux des ventes pour chaque ville.
+```python
+df_villes = dfLines.groupBy("ville").agg(sum("prix").alias("totales_prix"))
+```
+> Affichez le résultat pour vérifier que les totaux ont été calculés correctement
+```python
+df_villes.show()
+```
+> Enregistrez le résultat dans un fichier CSV
+```python
+df_villes.write.format("csv").option("header", "true").save("totale_Ventes.csv")
+```
+> Fermer la sessions de spark
+```python
+spark.stop()
+```
+> Ces étapes vous permettront de calculer les totaux des ventes dans une ville qui existe dans un fichier CSV à l'aide de PySpark.
+
 ### Streaming
 ## Conclusion
 
