@@ -23,7 +23,6 @@ rddLines.foreach(print)
 > Utilisez la fonction filter() pour exclure la première ligne contenant l'en-tête
 ```python
 ventes_lignes = rddLines.filter(lambda ligne: "ville" not in ligne)
-
 print("\t \t Le contenu de fichier 'ventes.cvs' sans lignes \n ")
 ventes_lignes.foreach(print)
 ```
@@ -39,7 +38,7 @@ ventes_ville.foreach(print)
 ```
 > Affichez le résultat pour vérifier que les totaux ont été calculés correctement
 ```python
-    ventes_ville.saveAsTextFile("ventes_resultat.txt")
+ventes_ville.saveAsTextFile("ventes_resultat.txt")
 ```
 > cette commande enregistre le RDD des totaux des ventes dans un fichier texte et Fermez le contexte Spark.
 ```python
@@ -116,7 +115,7 @@ date,ville,produit,prix
 ('Essaouira', 124884.69899999998)
 ('Sidi Slimane', 398728.33500000066)
 ```
-    ### DF
-    ### Streaming
+### DF
+### Streaming
 ## Conclusion
 
