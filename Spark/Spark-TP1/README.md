@@ -1,26 +1,29 @@
 <table>
   <tr >
     <th style="text-align: center;">Ecole Normale Supérieure de l’Enseignement  Technique Mohammedia Université Hassan II de Casablanca</th>
-    <th><img src="https://www.clubs-etudiants.ma/wp-content/uploads/2018/11/enst-1.png"/></th>
-    <th style="text-align: center;"> Département Mathématiques et Informatique « Ingénierie Informatique : Big Data e t Cloud Computing » II-BDCC2   </th>
+    <th><img src="https://user-images.githubusercontent.com/48890714/230882470-f070fc71-e968-4785-855d-ebe3d44fe672.png"/></th>
+    <th style="text-align: center;"> Département Mathématiques et Informatique « Ingénierie Informatique : Big Data t Cloud Computing » II-BDCC2   </th>
   </tr>
 </table>
-<table >
-   <tr >
-      <th style="text-align: center;">Réaliser par </th>
-      <th style="text-align: center;">  Module  </th>
-      <th style="text-align: center;">Filière</th>
-      <th style="text-align: center;">Date </th>
-      <th style="text-align: center;">  E-mail  </th>
-    </tr>
-    <tr>
-      <td>Daabal Sokaina</td>
-      <td> Big data</td>
-      <td> II-BDCC 2 </td>
-      <td> 10 Mars 2023 </td>
-      <td> sokainadaabal@gmail.com / s.daabal@etu.enset-media.ac.ma </td>
-     </tr>
-</table> 
+          <table>
+            <tr >
+              <th style="text-align: center;">Réaliser par </th>
+              <th style="text-align: center;">  Module  </th>
+              <th style="text-align: center;">Filière</th>
+              <th style="text-align: center;">Date </th>
+              <th style="text-align: center;">  E-mail  </th>
+              <th style="text-align: center;"> Type  </th>
+            </tr>
+            <tr >
+              <td>Daabal Sokaina</td>
+              <td> Big data</td>
+              <td> II-BDCC 2 </td>    
+              <td> 10 Mars 2023 </td>
+              <td> sokainadaabal@gmail.com / s.daabal@etu.enset-media.ac.ma  </td>
+              <td> C.Rendu </td>
+            </tr>
+          </table> 
+
 
 # TP 1 : Spark
 ## Introduction 
@@ -109,7 +112,7 @@ Pour afficher l'interface utilisateur Spark Web, ouvrez un navigateur Web et ent
 http://127.0.0.1:8080/
 ```
  
-## Application de Spark
-### Appliucation 1
-#### C'est quoi RDD
-Le RDD est une collection d’éléments partitionnées et distribuées dans le cluster.
+## Traitement parallèle et distribué avec Spark
+### Application 1
+### Application 2
+### Application 3
