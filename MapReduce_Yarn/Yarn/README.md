@@ -106,11 +106,14 @@ Pour lancer ce traitement, nous allons créer un job
 Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration dans IntellIJ pour générer un fichier .jar.
 Ensuite, nous allons exécuter cette commande :
 ```
-hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/Department/DepartmentDriver DocumentsTraite/Employeurs.csv  DocumentsTraite/
+hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/Department/DepartmentDriver /user/root/BigDataTPs/Yarn/Employeurs.csv /user/root/BigDataTPs/Yarn/output/
+
 ```
-Pour voire les resultat consulter le dossier ``` DocumentsTraite``` dans  le fichier  ```part-r-00000```
+
+Pour afficher le résultat du MapReduce, on va exécuter la commande suivante :
 
 ````
+$ hdfs dfs -cat /user/root/BigDataTPs/Yarn/output/part-r-00000
 finance	max :17000.0 , min :9000.0
 informatique	max :24000.0 , min :20000.0
 ````
@@ -178,16 +181,17 @@ public class DepartmentTotaleDriver {
 Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration dans IntellIJ pour générer un fichier .jar.
 Ensuite, nous allons exécuter cette commande :
 ```
-hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/DepartmentTotaleEmploye/DepartmentTotaleDriver DocumentsTraite/Employeurs.csv DocumentsTraite/
+hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/DepartmentTotaleEmploye/DepartmentTotaleDriver /user/root/BigDataTPs/Yarn/Employeurs.csv /user/root/BigDataTPs/Yarn/outputTotale
 ```
-Pour voire les resultat consulter le dossier ``` DocumentsTraite``` dans  le fichier  ```part-r-00000(1)```
+Pour afficher le résultat du MapReduce, on va exécuter la commande suivante :
 
 ```
+$ hdfs dfs -cat /user/root/BigDataTPs/Yarn/outputTotale/part-r-00000
 finance	2
 informatique	3
 ```
 ### Exercice 2.
-#### le fichier de température ![https://www.ncei.noaa.gov/data/global-hourly/archive/csv/]
+#### [le fichier de température file1.csv](https://www.ncei.noaa.gov/data/global-hourly/archive/csv/)
 #### Probléme à résoudre
 Extraire les valeurs de température et calculer la température minimale et maximale pour chaque année.
 Pour résoudre ce probléme, nous avons créé deux classes
@@ -271,9 +275,22 @@ Pour lancer ce traitement, nous allons créer un job
 Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration dans IntellIJ pour générer un fichier .jar.
 Ensuite, nous allons exécuter cette commande :
 ```
-hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/DepartmentTotaleEmploye/DepartmentTotaleDriver DocumentsTraite/Employeurs.csv  DocumentsTraite/
+hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/DepartmentTotaleEmploye/TemperatureDriver /user/root/BigDataTPs/Yarn/file1.csv /user/root/BigDataTPs/Yarn/outputFile
 ```
-Pour voire les resultat consulter le dossier ``` DocumentsTraite``` dans  le fichier  ```part-r-00000(1)``` 
+Pour afficher le résultat du MapReduce, on va exécuter la commande suivante :
+
+```
+hdfs dfs -cat /user/root/BigDataTPs/Yarn/outputFile/part-r-00000
+1984-01 min : 5.1 , max: 5.1
+1984-02 min : -32.1 , max: 4.9E-324
+1984-03 min : 48.1 , max: 48.1
+1984-04 min : 50.1 , max: 50.1
+1984-05 min : 10.1 , max: 10.1
+1984-06 min : 102.1 , max: 102.1
+1984-07 min : 99.1 , max: 99.1
+1984-08 min : 167.1 , max: 167.1
+1984-10 min : 1.7976931348623157E308 , max: 4.9E-324
+```
 
 ## Conclusion 
 En conclusion, le système YARN est un composant clé de l'écosystème Hadoop qui permet la gestion efficace des ressources de traitement dans un environnement distribué. En utilisant YARN, nous pouvons facilement exécuter des programmes MapReduce sur un cluster Hadoop et profiter de la mise à l'échelle horizontale pour gérer de grands ensembles de données. Bien qu'il y ait une certaine courbe d'apprentissage pour travailler avec YARN, il s'agit d'un outil puissant pour les ingénieurs en données qui cherchent à gérer des charges de travail de données distribuées à grande échelle.
