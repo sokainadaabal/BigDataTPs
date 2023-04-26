@@ -107,7 +107,6 @@ Pour exécuter le job MapReduce. Il est nécessaire de modifier la configuration
 Ensuite, nous allons exécuter cette commande :
 ```
 hadoop jar Yarn-1.0-SNAPSHOT.jar ma/enset/Department/DepartmentDriver /user/root/BigDataTPs/Yarn/Employeurs.csv /user/root/BigDataTPs/Yarn/output/
-
 ```
 
 Pour afficher le résultat du MapReduce, on va exécuter la commande suivante :
@@ -145,9 +144,7 @@ Pour réaliser ce traitement, nous avons créé deux classes
             }
 
             context.write(new Text(key), new IntWritable(somme));
-
         }
-
 }  
  ```
 Pour lancer ce traitement, nous allons créer un job
@@ -174,7 +171,6 @@ public class DepartmentTotaleDriver {
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
 
         job.waitForCompletion(true);
-
     }
 }
  ```
@@ -198,7 +194,6 @@ Pour résoudre ce probléme, nous avons créé deux classes
  - ```TemperatureMappet.java```
 ``` java
 public class TemperatureMapper extends Mapper<LongWritable, Text,Text, DoubleWritable> {
-
     @Override
     protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, DoubleWritable>.Context context) 
     throws IOException, InterruptedException {
