@@ -33,7 +33,7 @@ Le système de traitement de données distribué Apache Hadoop a été conçu po
  - retourne des résultats selon un programme suivi.
 ## Réalisation 
 ### Execrcice 1.
-#### le fichier employees.csv 
+#### le fichier employes.csv 
 
 ```
 ahmed;slimani;informatique;ingenieur;20000.0
